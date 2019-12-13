@@ -1,14 +1,13 @@
-<form class="form-button">
+<form class="form-button" (ngSubmit)="handleSubmit()">
   <mat-form-field class="add-todo">
     <input
-      required
-      aria-required
+      ngRequired
       name="inputText"
       [(ngModel)]="inputText"
       matInput
       placeholder="New To Do" >
   </mat-form-field>
-  <button mat-raised-button type="submit" (click)="submitNewTodo(inputText)">
+  <button mat-raised-button type="submit">
     <div>Click me!</div>
   </button>
 </form>

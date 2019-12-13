@@ -1,6 +1,21 @@
 <app-add-todo [submitNewTodo]="submitNewTodo" ></app-add-todo>
 <mat-list>
-  <mat-list-item *ngFor="let todo of todoList" >
-    {{todo.text}}
+  <mat-list-item
+    class="list-item"
+    [class.completed]="todo.completed"
+    *ngFor="let todo of todoList"
+    (click)="toggleCompleted(todo.id)">
+    <div
+      class="item-content"
+    >
+      <span>
+        {{todo.text}}
+      </span>
+      <mat-checkbox
+        class="checkbox"
+        [(ngModel)]="todo.completed"
+      >
+    </mat-checkbox>
+    </div>
   </mat-list-item>
 </mat-list>

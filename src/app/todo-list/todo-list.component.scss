@@ -1,0 +1,16 @@
+.list-item {
+  transition: all .5s ease;
+  &:hover{
+    background-color: lightpink;
+  }
+  &.completed {
+    text-decoration: line-through;
+    color: grey;
+  }
+}
+
+.item-content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}

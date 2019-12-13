@@ -6,6 +6,7 @@ import {TodoItem} from '../todo-item'
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.scss']
 })
+
 export class TodoListComponent implements OnInit {
   todoList: TodoItem[];
 
@@ -23,16 +24,29 @@ export class TodoListComponent implements OnInit {
       }
     ];
     this.submitNewTodo = this.submitNewTodo.bind(this);
+    this.toggleCompleted = this.toggleCompleted.bind(this);
    }
 
    submitNewTodo(text: string): void {
-      console.log(this.todoList)
     const newTodo: TodoItem = {
       id: this.todoList.length ? this.todoList[this.todoList.length-1].id + 1 : 1,
       text,
       completed: false
     }
     this.todoList.push(newTodo);
+   }
+
+   toggleCompleted(id: number): void {
+    const newArr = this.todoList.map(todo => {
+    if (todo.id === id) {
+      return {
+        ...todo,
+        completed: !todo.completed
+      }
+    }
+    return todo;
+    });
+    this.todoList = newArr;
    }
 
   ngOnInit() {

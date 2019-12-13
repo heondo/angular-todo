@@ -10,7 +10,16 @@ export class AddTodoComponent implements OnInit {
   @Input() inputText: string = "";
   @Input() submitNewTodo: Function;
 
-  constructor() { }
+  constructor() {
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit() {
+    this.submitNewTodo(this.inputText);
+    this.inputText = "";
+  }
+
+
 
   ngOnInit() {
   }

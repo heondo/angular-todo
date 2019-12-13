@@ -8,15 +8,14 @@ import { AddTodoComponent } from './add-todo/add-todo.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
-import { TodoItemComponent } from './todo-item/todo-item.component';
 import { TodoListComponent } from './todo-list/todo-list.component'
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatListModule } from '@angular/material/list'
 
 @NgModule({
   declarations: [
     AppComponent,
     AddTodoComponent,
-    TodoItemComponent,
     TodoListComponent
   ],
   imports: [
@@ -26,7 +25,8 @@ import { MatListModule } from '@angular/material/list'
     MatInputModule,
     FormsModule,
     MatButtonModule,
-    MatListModule
+    MatListModule,
+    MatCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]
