@@ -1,0 +1,14 @@
+<form class="form-button">
+  <mat-form-field class="add-todo">
+    <input
+      required
+      aria-required
+      name="inputText"
+      [(ngModel)]="inputText"
+      matInput
+      placeholder="New To Do" >
+  </mat-form-field>
+  <button mat-raised-button type="submit" (click)="submitNewTodo(inputText)">
+    <div>Click me!</div>
+  </button>
+</form>
